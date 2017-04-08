@@ -30,6 +30,7 @@ body,html {
   color: white;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+  cursor: pointer;
 }
 
 .playing {
@@ -41,6 +42,7 @@ body,html {
 kbd {
   display: block;
   font-size: 4rem;
+  cursor: pointer;
 }
 
 .sound {
@@ -48,4 +50,5 @@ kbd {
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: #E74C3C;
+  cursor: pointer;
 }

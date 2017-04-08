@@ -26,10 +26,12 @@ window.addEventListener('keydown', function(e) {
     playSound(e.keyCode);
 });
 
-// when the transition ends remove the class
+
 const keys = document.querySelectorAll('.key');
 keys.forEach(function(key) {
+    // when the transition ends remove the class
     key.addEventListener('transitionend', removeTransition);
+    // playSound on click
     key.addEventListener('click', function(e) {
         playSound(this.attributes['data-key'].value);
     });
