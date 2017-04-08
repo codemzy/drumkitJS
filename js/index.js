@@ -1,9 +1,9 @@
 'use strict';
 
 // function to play the sound
-function playSound(e) {
-    const audio = document.querySelector('audio[data-key="' + e.keyCode + '"]'); // get the audio element if matches keyCode
-    const key = document.querySelector('.key[data-key="' + e.keyCode + '"]'); // get the key element if matches keyCode
+function playSound(keyCode) {
+    const audio = document.querySelector('audio[data-key="' + keyCode + '"]'); // get the audio element if matches keyCode
+    const key = document.querySelector('.key[data-key="' + keyCode + '"]'); // get the key element if matches keyCode
     // stop the function if no audio element
     if (!audio) {
         return;
@@ -22,13 +22,15 @@ function removeTransition(e) {
 }
 
 // listen for the keydown event
-window.addEventListener('keydown', playSound);
+window.addEventListener('keydown', function(e) {
+    playSound(e.keyCode);
+});
 
 // when the transition ends remove the class
 const keys = document.querySelectorAll('.key');
 keys.forEach(function(key) {
     key.addEventListener('transitionend', removeTransition);
     key.addEventListener('click', function(e) {
-        console.log(this.attributes['data-key'].value);
+        playSound(this.attributes['data-key'].value);
     });
 });
