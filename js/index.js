@@ -12,3 +12,16 @@ window.addEventListener('keydown', function(e) {
     audio.play(); // play audio
     key.classList.add('playing'); // add the class playing to the key element
 });
+
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') {
+        return; // skip if not a transform
+    }
+    this.classList.remove('playing'); // remove the class playing from the key element
+}
+
+// when the transition ends remove the class
+const keys = document.querySelectorAll('.key');
+keys.forEach(function(key) {
+    key.addEventListener('transitionend', removeTransition);
+});
