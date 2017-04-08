@@ -10,3 +10,5 @@
 DRUM KIT
 
 Based on Day 1 of the awesome Wes Bos Javascript30 course.
+
+View at https://codemzy.github.io/drumkitJS
